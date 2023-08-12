@@ -1,0 +1,982 @@
+
+#login {
+	margin-left: 25%;
+	width: 50%;
+	margin-top: 2%;
+}
+
+#login>h1 {
+	text-align: center;
+}
+
+#registro {
+	margin-left: 25%;
+	width: 50%;
+	margin-top: 5%;
+} 
+
+/*AQUI ESTAN LOS DEL LOGIN*/
+
+.formulariologin {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+
+/* Estilos para la cabecera */
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+}
+
+.logo {
+    height: 100px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.search-container {
+    margin-left: 100px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    padding: 15px 70px; /* Ajusta el padding para hacer el elemento más ancho */
+    border: 3px solid #ccc;
+    border-radius: 20px;
+}
+
+/* Estilos para los enlaces */
+.locations-container a,
+.login-container a,
+.cart-container a {
+    text-decoration: none;
+    color: black; /* Opcional: establecer color de texto negro para los enlaces */
+}
+
+/* Resto de estilos que ya tenías */
+.locations-container,
+.login-container,
+.cart-container {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.location-icon,
+.login-icon {
+    height: 30px;
+    width: auto;
+    margin-right: 7px;
+}
+
+.cart-icon{
+	height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+body {
+	font-family: "Arial black", sans-serif;
+	width: 100%;
+	background-color: #000000;
+	background-repeat: no-repeat;
+	background-size: cover;
+    padding: 0px;
+    margin: 0px;
+	
+}
+
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #ff8040;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 0px;
+  	position: sticky;
+  	top: 0;
+}
+
+.navbar ul {
+	
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* Estilos para el panel de imagen */
+.panel {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.panel-image {
+    width: 100%;
+    max-height: 400px;
+}
+
+/* Estilos para la sección de productos */
+.products-section {
+    /* Agrega aquí los estilos para la sección de productos */
+}
+
+/* Estilos para el panel de producto */
+.product-panel {
+    /* Agrega aquí los estilos para el panel de producto */
+}
+
+/* Estilos para los botones */
+.buttons {
+    text-align: center;
+    margin: 20px 0;
+    
+}
+.linea1 {
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+
+.buy-button, .view-more-button {
+    padding: 10px 20px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #f5c725;
+    padding: 0px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    padding: 10px;
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.logofooter{
+	height: 180px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.disclaimer-bar {
+    background-color: #606060;
+    color: white;
+    padding: 15px;
+    font-family: "Arial Black", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.disclaimer-text {
+    margin: 1px;
+}
+
+.contact-bar {
+    margin-top: 10px;
+}
+
+.contact-text {
+    font-weight: bold;
+    margin: 0;
+}
+
+.contact-info {
+    margin: 5px 0;
+}
+
+.social-media-bar {
+    margin-top: 10px;
+}
+
+.redes {
+	padding: 0px 0px;
+	display: inline;
+	left: 35%;
+}
+
+
+#r1{
+    width: 50px;
+    height: 50px;
+    position: relative;
+   
+}
+#r2{
+    width: 50px;
+    height: 50px;
+    position: relative;
+   
+    
+}
+#r3{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    
+    
+}
+#r4{
+    width: 50px;
+    height: 50px;
+    position: relative;
+     
+}
+
+
+
+/* Estilos adicionales para el contenido del formulario, como etiquetas, campos de entrada, botones, etc. */
+.grupito {
+    margin-bottom: 10px;
+}
+
+.btn {
+    /* Estilos para los botones (puedes ajustarlos según sea necesario) */
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+}
+
+.usuarioh1 {
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.regreso1{
+	padding: 10px 40px;
+    border-radius: 5px;
+    position: relative;
+    text-align: right;
+    margin: 50px 0;
+    color: white;
+    
+}
+
+.texto2 {
+    color: white; /* Cambiar el color del texto a blanco */
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin-left: 150px; /* Ajustar el margen izquierdo para separar del borde */
+    margin-bottom: 20px; /* Agregar espacio de 20px debajo del párrafo */
+}
+
+.parrafo1 {
+    color: white; /* Cambiar el color del texto a blanco */
+    text-align: justify; /* Justificar el texto */
+    margin: 30px 150px; /* Agregar un margen superior e inferior y ajustar el margen izquierdo */
+    font-size: 20px; /* Tamaño de letra 20px */
+    margin-bottom: 50px; /* Agregar espacio de 20px debajo del párrafo */
+}
+
+.regreso2{
+	padding: 30px 150px;
+    border-radius: 5px;
+    position: relative;
+    text-align: right;
+    margin: 50px 0;
+    color: white;
+    
+}
+
+
+
+.cuadros2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cuadro1 {
+    margin: 0 10px;
+    color: black;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 70px;
+}
+
+.cuadro1 p {
+    margin: 5px 0;
+}
+
+.texto3 {
+    color: white; /* Cambiar el color del texto a blanco */
+    text-align: center; /* Alinear el texto a la izquierda */
+    margin-bottom: 20px; /* Agregar espacio de 20px debajo del párrafo */
+}
+
+.botones3{
+	padding: 20px 50px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    margin: 30px 0px;
+    color: white;
+}
+
+.view-more-button2 {
+    padding: 15px 50px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.regreso3{
+	padding: 30px 150px;
+    border-radius: 5px;
+    position: relative;
+    text-align: right;
+    margin: 50px 200px;
+    color: white;
+    
+}
+
+
+/*AQUI ESTAN PRODUCTOS INDEX*/
+
+.texto4 {
+    text-align: center; /* Alinear el texto a la izquierda */
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+}
+
+.cuadro3 {
+    width: 25%; /* Ajusta el ancho según tu diseño */
+    height: 560px; /* Ajusta la altura según tu diseño */
+    margin: 0 10px;
+    color: black;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 70px;
+}
+
+.indexh1s {
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 50px; /* Tamaño de letra 20px */
+}
+
+.cuadro3 p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.pollo1 {
+    width: 90%; /* Ajusta el ancho de la imagen al 100% del cuadro */
+    height: 300px; /* Para mantener la proporción de la imagen */
+    margin: 0 20px; /* Centra la imagen horizontalmente */
+}
+
+.buy-buttons {
+    padding: 10px 20px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 10px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+
+/* Estilos para la barra de navegación DE LA CARTA */
+.navbarra {
+    background-color: #ff8000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 0px;
+  	position: sticky;
+  	top: 0;
+}
+
+.navbarra ul {
+	
+    list-style: none;
+    display: flex;
+}
+
+.navbarra li {
+    margin: 0 20px;
+}
+
+.navbarra a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.categoriacat {
+    /* Estilos por defecto de las imágenes */
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s; /* Agrega una transición suave al efecto */
+}
+
+.categoriacat:hover,
+.categoriacat:focus {
+    filter: invert(100%); /* Invierte los colores de la imagen */
+    /*outline: none;  Elimina el contorno de enfoque en el clic */
+    cursor: pointer;
+}
+
+.cuadros2carta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cuadrocarta {
+    width: 25%; /* Ajusta el ancho según tu diseño */
+    height: 560px; /* Ajusta la altura según tu diseño */
+    margin: 20px 10px;
+    color: black;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 70px;
+}
+
+.cuadrocarta p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.imagenproducto {
+    width: 90%; /* Ajusta el ancho de la imagen al 100% del cuadro */
+    height: 300px; /* Para mantener la proporción de la imagen */
+    margin: 0 20px; /* Centra la imagen horizontalmente */
+}
+
+.nombre {
+    text-align: center; /* Alinear el texto a la izquierda */
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.precio {
+    text-align: center; /* Alinear el texto a la izquierda */
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 20px; /* Tamaño de letra 20px */
+}
+
+
+/* DETALLE DE PRODUCTO*/
+
+.cuadros3carta {
+    display: flex;
+    align-items: Left;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cuadrocarta3 {
+    display: flex;
+    width: 100%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    height: 700px; /* Ajusta la altura según tu diseño */
+    margin: 20px 0;
+    color: white;
+    background-color: black;
+    border: 1px solid #000000;
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+.cuadrocarta3 p {
+    margin: 5px 0;
+    text-align: Left;
+    font-size: 25px;
+}
+
+.imagenproducto3 {
+	width: 50%; /* Ajusta el ancho de la imagen */
+    height: 100%; /* Ajusta la altura al 100% del cuadro */
+    object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
+    margin-left: 20px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+}
+
+.nombre3 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 40px; /* Tamaño de letra 20px */
+}
+
+.precio3 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 30px; /* Tamaño de letra 20px */
+}
+
+.cuadrito3{
+	width: 40%; /* Ajusta el ancho del cuadro del texto */
+	margin: 5px 50px;
+}
+
+.nombre3, .descripcion3, .precio3 {
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.buttons3{
+    margin: 20px 0;
+    font-size: 25px;
+    padding: 15px 15px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.cant3 {
+	margin: 5px 0;
+    font-size: 25px;
+    padding: 15px 10px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+	width: 50px; /* Puedes ajustar el valor según tu diseño */
+}
+
+
+/* PRODUCTO EN CANASTITA*/
+/* PRODUCTO EN CANASTITA*/
+/* PRODUCTO EN CANASTITA*/
+
+.cuadros4canasta {
+    display: flex;
+    align-items: Left;
+    justify-content: center;
+}
+
+.cuadrocanasta4 {
+    display: flex;
+    width: 80%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    height: 350px; /* Ajusta la altura según tu diseño */
+    margin: 15px 0;
+    color: white;
+    background-color: black;
+    border: 1px solid #000000;
+    border-radius: 70px;
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+.cuadrocanasta4 p {
+    margin: 5px 0;
+    text-align: Left;
+    font-size: 25px;
+}
+
+.imagenproducto4 {
+	width: 35%; /* Ajusta el ancho de la imagen */
+    height: 90%; /* Ajusta la altura al 100% del cuadro */
+    object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
+    margin-left: 150px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+}
+
+.nombre4 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+  /*  margin-bottom: 5px;  Agregar espacio de 20px debajo del párrafo */
+    margin-top: 5px; /* Ajustar el margen superior según tu preferencia */
+	font-size: 40px; /* Tamaño de letra 20px */
+}
+
+.precio4 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 30px; /* Tamaño de letra 20px */
+}
+
+.cuadrito4{
+	width: 40%; /* Ajusta el ancho del cuadro del texto */
+	margin: 0 30px;
+}
+
+.nombre4, .descripcion4, .precio4 {
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.cant4 {
+	margin: 5px 0;
+    font-size: 20px;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+	width: 50px; /* Puedes ajustar el valor según tu diseño */
+}
+
+.buttons4{
+    margin: 5px 5px;
+    font-size: 20px;
+    padding: 5px 20px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.buy-button4 {
+    background-color: #b81f1f;
+    padding: 5px 90px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 150px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 25px; /* Tamaño de letra 20px */
+    
+}
+
+.bloque4{
+	display: flex;
+}
+
+.bloque41{
+	display: flex;
+	padding: 0 20px;
+}
+
+/* Estilos para los botones DE LA CANASTA*/
+.buttonscana {
+    text-align: center;
+    margin: 20px 0;
+    
+}
+.linea14 {
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.view-more-button14 {
+    padding: 10px 20px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.totalcanasta{
+	width: 100%; /* Ajusta el ancho del cuadro del texto */
+	margin: 0 30px;
+	color: white;
+	text-align: center; /* Alinear el texto a la izquierda */
+  /*  margin-bottom: 5px;  Agregar espacio de 20px debajo del párrafo */
+    margin-top: 5px; /* Ajustar el margen superior según tu preferencia */
+	font-size: 40px; /* Tamaño de letra 20px */
+}
+
+
+/* ESTILOS DE PEDIDO!!!!! */
+/* ESTILOS DE PEDIDO!!!!! */
+/* ESTILOS DE PEDIDO!!!!! */
+
+
+/* Contenedor principal */
+.pedido-container {
+    padding: 20px;
+    align-items: Left;
+    justify-content: center;
+    width: 90%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    height: 1300px; /* Ajusta la altura según tu diseño */
+    margin: 15px auto;
+    color: white;
+    background-color: black;
+    border: 5px solid #ffffff;
+    border-radius: 50px;
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+/* Título del pedido */
+.pedido-title {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+    
+}
+
+/* Formulario de detalles */
+.pedido-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin: 30px 50px;
+}
+
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-column label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px 40px;
+    text-align: left;
+}
+
+
+.form-column input {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+    padding: 20px 200px;
+    text-align: left;
+}
+
+
+/* Métodos de pago y entrega */
+.metodo-pago,
+.metodo-entrega {
+    margin-bottom: 20px;
+    color: white;
+    margin: 30px 50px;
+}
+
+.metodo-pago p,
+.metodo-entrega p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.metodo-pago label,
+.metodo-entrega label {
+    margin-right: 10px;
+    color: white;
+}
+
+/* Resumen de pedido */
+.resumen-pedido {
+    margin-bottom: 20px;
+    color: white;
+    margin: 30px 50px;
+}
+
+.resumen-title {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Resumen total */
+.resumen-total {
+    background-color: #333;
+    padding: 10px;
+    color: orange;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.resumen-total p {
+    margin: 5px 0;
+}
+
+/* Botones */
+.pedido-buttons {
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.pedido-button {
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50px;
+    margin: 50px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/*AQUI REPORTE*/
+/*AQUI REPORTE*/
+/*AQUI REPORTE*/
+
+#reporte {
+	margin-left: 25%;
+	width: 50%;
+	margin-top: 2%;
+	
+}
+
+#reporte>h1 {
+	text-align: center;
+}
+
+
+.partereporte {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.partereporte h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fechas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.fechas label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.fechas input[type="date"] {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.fechas button {
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+
+.botonesreporte{
+	margin: 20px 20px;
+    font-size: 25px;
+    padding: 15px 15px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.botonesrep{
+	text-align: center;
+    margin: 30px 80px;
+}
+
+/* Tabla de reporte 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}*/
+
+#mante {
+    margin: 0 auto; /* Ajusta el margen  */
+    width:90%; /* Ajusta el ancho según sea necesario */
+    margin-top: 2%; /*Ajusta el ancho según sea necesario */
+    justify-content: center;
+}
+
+
+#mante>h1 {
+	text-align: center;
+}
+
+
+
+.partemante {
+    background-color: white;
+    padding: 10px; /* Agrega un padding para crear espacio alrededor del contenido */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+
+
