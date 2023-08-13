@@ -1,6 +1,6 @@
-<%@page import="model.Usuario"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Producto"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -105,22 +105,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="prod" items="${productos}">
-                            <tr class="text-center">
-                                <td>${prod.idprod}</td>
-                                <td>${prod.nombreprod}</td>
-                                <td>${prod.descripcion}</td>
-                                <td>${prod.categoriaid}</td>
-                                <td>${prod.precio}</td>
-                                <td>${prod.estado}</td>
-                                <td><img src="${prod.imagen}" height="90px" width="50%"></td>
-                                <td>
-                                    <a href="#" class="btn btn-warning">Editar</a>
-                                    <a href="#" class="btn btn-danger">Eliminar</a>
-                                </td>
-                            </tr>
-                        </c:forEach>                    
-                    </tbody>
+				        <c:forEach var="prod" items="${productos}">
+				            <tr class="text-center">
+				                <td>${prod.idprod}</td>
+				                <td>${prod.nombreprod}</td>
+				                <td>${prod.descripcion}</td>
+				                <td>${prod.categoria}</td>
+				                <td>${prod.precio}</td>
+				                <td>${prod.estado}</td>
+				                <td><img src="${prod.imagen}" height="90px" width="50%"></td>
+				                <td>
+				                    <a href="#" class="btn btn-warning">Editar</a>
+				                    <a href="#" class="btn btn-danger">Eliminar</a>
+				                </td>
+				            </tr>
+				        </c:forEach>
+				    </tbody>
                 </table>                         
             </div>
         </div>
