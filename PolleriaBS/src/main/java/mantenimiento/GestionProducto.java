@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import interfaces.ProductoInterface;
 import model.Producto;
-import utils.MySQLConexion8;
+import utils.ConexionBD;
 
 public class GestionProducto implements ProductoInterface {
 
@@ -16,7 +16,7 @@ public class GestionProducto implements ProductoInterface {
 		 int resultado = 0;
 
 	        try {
-	            Connection con = MySQLConexion8.getConexion();
+	            Connection con = ConexionBD.getConnection();
 	            String query = "INSERT INTO tb_productos (idprod, nombre_prod, descripcion, categoriaid, precio, estado, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	            PreparedStatement ps = con.prepareStatement(query);
 	            ps.setString(1, prod.getIdprod());
@@ -43,7 +43,7 @@ public class GestionProducto implements ProductoInterface {
 		 Producto producto = null;
 
 	        try {
-	            Connection con = MySQLConexion8.getConexion();
+	            Connection con = ConexionBD.getConnection();
 	            String query = "SELECT * FROM tb_productos WHERE idprod = ?";
 	            PreparedStatement ps = con.prepareStatement(query);
 	            ps.setInt(1, idprod);
@@ -76,7 +76,7 @@ public class GestionProducto implements ProductoInterface {
 		 int resultado = 0;
 
 	        try {
-	            Connection con = MySQLConexion8.getConexion();
+	            Connection con = ConexionBD.getConnection();
 	            String query = "UPDATE tb_productos SET nombre_prod = ?, descripcion = ?, categoriaid = ?, precio = ?, estado = ?, imagen = ? WHERE idprod = ?";
 	            PreparedStatement ps = con.prepareStatement(query);
 	            ps.setString(1, prod.getNombreprod());
@@ -103,7 +103,7 @@ public class GestionProducto implements ProductoInterface {
 	        int resultado = 0;
 
 	        try {
-	            Connection con = MySQLConexion8.getConexion();
+	            Connection con = ConexionBD.getConnection();
 	            String query = "DELETE FROM tb_productos WHERE idprod = ?";
 	            PreparedStatement ps = con.prepareStatement(query);
 	            ps.setString(1, idprod);
@@ -124,7 +124,7 @@ public class GestionProducto implements ProductoInterface {
 		ArrayList<Producto> productos = new ArrayList<>();
 
         try {
-            Connection con = MySQLConexion8.getConexion();
+            Connection con = ConexionBD.getConnection();
             String query = "SELECT * FROM tb_productos";
             PreparedStatement ps = con.prepareStatement(query);
 
@@ -157,7 +157,7 @@ public class GestionProducto implements ProductoInterface {
 		  ArrayList<Producto> productos = new ArrayList<>();
 
 	        try {
-	            Connection con = MySQLConexion8.getConexion();
+	            Connection con = ConexionBD.getConnection();
 	            String query = "SELECT * FROM tb_productos WHERE categoriaid = ?";
 	            PreparedStatement ps = con.prepareStatement(query);
 	            ps.setInt(1, categoria);
@@ -191,7 +191,7 @@ public class GestionProducto implements ProductoInterface {
 		ArrayList<Producto> productos = new ArrayList<>();
 
         try {
-            Connection con = MySQLConexion8.getConexion();
+            Connection con = ConexionBD.getConnection();
             String query = "SELECT * FROM tb_productos";
             PreparedStatement ps = con.prepareStatement(query);
 
@@ -224,7 +224,7 @@ public class GestionProducto implements ProductoInterface {
 		ArrayList<Producto> productos = new ArrayList<>();
 
         try {
-            Connection con = MySQLConexion8.getConexion();
+            Connection con = ConexionBD.getConnection();
             String query = "SELECT * FROM tb_productos WHERE nombre_prod LIKE ?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, "%" + nombreprod + "%");
