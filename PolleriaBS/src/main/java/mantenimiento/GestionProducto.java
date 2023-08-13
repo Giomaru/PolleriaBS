@@ -3,257 +3,189 @@ package mantenimiento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import interfaces.ProductoInterface;
 import model.Producto;
-import utils.ConexionBD;
+import utils.MySQLConexion8;
 
 public class GestionProducto implements ProductoInterface {
-
+	
 	@Override
-	public int crear(Producto prod) {
-		 int resultado = 0;
-
-	        try {
-	            Connection con = ConexionBD.getConnection();
-	            String query = "INSERT INTO tb_productos (idprod, nombre_prod, descripcion, categoriaid, precio, estado, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
-	            PreparedStatement ps = con.prepareStatement(query);
-	            ps.setString(1, prod.getIdprod());
-	            ps.setString(2, prod.getNombreprod());
-	            ps.setString(3, prod.getDescripcion());
-	            ps.setInt(4, prod.getCategoriaid());
-	            ps.setDouble(5, prod.getPrecio());
-	            ps.setInt(6, prod.getEstado());
-	            ps.setString(7, prod.getImagen());
-
-	            resultado = ps.executeUpdate();
-
-	            ps.close();
-	            con.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-
-	        return resultado;
+	public int registrar(Producto p)  {
+		int rs = 0; //0 --> Error
+		
+		//Plantilla
+		Connection con = null;
+		PreparedStatement pst = null;
+		
+		try {
+			con = MySQLConexion8.getConexion();
+			String sql = "insert into tb_productos values (?,?,?,?,?,default)";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, p.getIdprod());
+			pst.setString(2, p.getNombreprod());
+			pst.setString(3, p.getDescripcion());
+			pst.setInt(4, p.getCategoriaid());
+			pst.setDouble(5, p.getPrecio());	
+			//pst.setInt(6, p.getEstado());
+			//ejecutar 
+			
+			rs = pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("Error al registrar : " + e.getMessage());
+			
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+		
+		return rs ;
 	}
 
 	@Override
-	public Producto buscar(int idprod) {
-		 Producto producto = null;
+	public int actualizar(Producto p) {
+		int rs = 0; // 0 --> Error
 
-	        try {
-	            Connection con = ConexionBD.getConnection();
-	            String query = "SELECT * FROM tb_productos WHERE idprod = ?";
-	            PreparedStatement ps = con.prepareStatement(query);
-	            ps.setInt(1, idprod);
+		// Plantilla
+		Connection con = null;
+		PreparedStatement pst = null;
 
-	            ResultSet rs = ps.executeQuery();
-	            if (rs.next()) {
-	                producto = new Producto(
-	                        rs.getString("idprod"),
-	                        rs.getString("nombre_prod"),
-	                        rs.getString("descripcion"),
-	                        rs.getInt("categoriaid"),
-	                        rs.getDouble("precio"),
-	                        rs.getInt("estado"),
-	                        rs.getString("imagen")
-	                );
-	            }
+		try {
+			con = MySQLConexion8.getConexion();
+			String sql = "update tb_productos set nombre_prod=?, descripcion = ?, id_categoria = ?, precio = ?, estado = ? where idprod = ?";
+			pst = con.prepareStatement(sql);
+			pst.setString(1, p.getNombreprod());
+			pst.setString(2, p.getDescripcion());
+			pst.setInt(3, p.getCategoriaid());
+			pst.setDouble(4, p.getPrecio());
+			pst.setInt(5, p.getEstado());
+			pst.setInt(6, p.getIdprod());
+						
+			// ejecutar
 
-	            rs.close();
-	            ps.close();
-	            con.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
+			rs = pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("Error al actualizar : " + e.getMessage());
 
-	        return producto;
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+
+		return rs;
 	}
 
 	@Override
-	public int actualizar(Producto prod) {
-		 int resultado = 0;
-
-	        try {
-	            Connection con = ConexionBD.getConnection();
-	            String query = "UPDATE tb_productos SET nombre_prod = ?, descripcion = ?, categoriaid = ?, precio = ?, estado = ?, imagen = ? WHERE idprod = ?";
-	            PreparedStatement ps = con.prepareStatement(query);
-	            ps.setString(1, prod.getNombreprod());
-	            ps.setString(2, prod.getDescripcion());
-	            ps.setInt(3, prod.getCategoriaid());
-	            ps.setDouble(4, prod.getPrecio());
-	            ps.setInt(5, prod.getEstado());
-	            ps.setString(6, prod.getImagen());
-	            ps.setString(7, prod.getIdprod());
-
-	            resultado = ps.executeUpdate();
-
-	            ps.close();
-	            con.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-
-	        return resultado;
-	    }
-
-	 @Override
-	 public int eliminar(String idprod) {
-	        int resultado = 0;
-
-	        try {
-	            Connection con = ConexionBD.getConnection();
-	            String query = "DELETE FROM tb_productos WHERE idprod = ?";
-	            PreparedStatement ps = con.prepareStatement(query);
-	            ps.setString(1, idprod);
-
-	            resultado = ps.executeUpdate();
-
-	            ps.close();
-	            con.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-
-	        return resultado;
+	public int eliminar(int idprod) {
+		int rs = 0; //0 --> Error
+		
+		//Plantilla
+		Connection con = null;
+		PreparedStatement pst = null;
+		
+		try {
+			con = MySQLConexion8.getConexion();
+			String sql = "update tb_productos set estado = 2 where idprod = ?";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, idprod);
+			
+			//ejecutar 
+			
+			rs = pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("Error en eliminar : " + e.getMessage());
+			
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+		
+		return rs ;
 	}
 
 	@Override
 	public ArrayList<Producto> listado() {
-		ArrayList<Producto> productos = new ArrayList<>();
-
-        try {
-            Connection con = ConexionBD.getConnection();
-            String query = "SELECT * FROM tb_productos";
-            PreparedStatement ps = con.prepareStatement(query);
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Producto producto = new Producto(
-                        rs.getString("idprod"),
-                        rs.getString("nombre_prod"),
-                        rs.getString("descripcion"),
-                        rs.getInt("categoriaid"),
-                        rs.getDouble("precio"),
-                        rs.getInt("estado"),
-                        rs.getString("imagen")
-                );
-                productos.add(producto);
-            }
-
-            rs.close();
-            ps.close();
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return productos;
-	}
-
-	@Override
-	public ArrayList<Producto> listarxCategoria(int categoria) {
-		  ArrayList<Producto> productos = new ArrayList<>();
-
-	        try {
-	            Connection con = ConexionBD.getConnection();
-	            String query = "SELECT * FROM tb_productos WHERE categoriaid = ?";
-	            PreparedStatement ps = con.prepareStatement(query);
-	            ps.setInt(1, categoria);
-
-	            ResultSet rs = ps.executeQuery();
-	            while (rs.next()) {
-	                Producto producto = new Producto(
-	                        rs.getString("idprod"),
-	                        rs.getString("nombre_prod"),
-	                        rs.getString("descripcion"),
-	                        rs.getInt("categoriaid"),
-	                        rs.getDouble("precio"),
-	                        rs.getInt("estado"),
-	                        rs.getString("imagen")
-	                );
-	                productos.add(producto);
-	            }
-
-	            rs.close();
-	            ps.close();
-	            con.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-
-	        return productos;
-	}
-
-	@Override
-	public ArrayList<Producto> listarProductos() {
-		ArrayList<Producto> productos = new ArrayList<>();
-
-        try {
-            Connection con = ConexionBD.getConnection();
-            String query = "SELECT * FROM tb_productos";
-            PreparedStatement ps = con.prepareStatement(query);
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Producto producto = new Producto(
-                        rs.getString("idprod"),
-                        rs.getString("nombre_prod"),
-                        rs.getString("descripcion"),
-                        rs.getInt("categoriaid"),
-                        rs.getDouble("precio"),
-                        rs.getInt("estado"),
-                        rs.getString("imagen")
-                );
-                productos.add(producto);
-            }
-
-            rs.close();
-            ps.close();
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return productos;
-	}
-
-	@Override
-	public ArrayList<Producto> listarProd(String nombreprod) {
-		ArrayList<Producto> productos = new ArrayList<>();
-
-        try {
-            Connection con = ConexionBD.getConnection();
-            String query = "SELECT * FROM tb_productos WHERE nombre_prod LIKE ?";
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, "%" + nombreprod + "%");
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Producto producto = new Producto(
-                        rs.getString("idprod"),
-                        rs.getString("nombre_prod"),
-                        rs.getString("descripcion"),
-                        rs.getInt("categoriaid"),
-                        rs.getDouble("precio"),
-                        rs.getInt("estado"),
-                        rs.getString("imagen")
-                );
-                productos.add(producto);
-            }
-
-            rs.close();
-            ps.close();
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return productos;
-            
+		ArrayList<Producto> lista = null;
+		
+		//Plantilla
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		
+		try {
+			con = MySQLConexion8.getConexion();
+			String sql = "select * from tb_productos where estado = 1";
+			pst = con.prepareStatement(sql);
+			
+			
+			//ejecutar 
+			
+			rs = pst.executeQuery();
+			
+			lista = new ArrayList<Producto>();
+			while (rs.next()) {
+				Producto p = new Producto(rs.getInt("idprod"), 
+										  rs.getString("nombre_prod"),
+										  rs.getString("descripcion"),
+										  rs.getInt("id_categoria"), 
+										  rs.getDouble("precio"), 
+										  rs.getInt("estado"));
+				
+				lista.add(p);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Error en listar : " + e.getMessage());
+			
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+		
+		
+		return lista ;
 	}
 
 	
+	@Override
+	public Producto buscar(int idprod) {
+		Producto p = null;
+		
+		//Plantilla
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		
+		try {
+			con = MySQLConexion8.getConexion();
+			String sql = "select * from tb_productos where idprod = ?";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, idprod);
+			pst.setInt(2, 1);
+			
+			rs = pst.executeQuery();
+			
+			
+			if (rs.next()) {
+			 p = new Producto(rs.getInt("idprod"), 
+					 		  rs.getString("nombre_prod"),
+					 		  rs.getString("descripcion"),
+							  rs.getInt("id_categoria"), 
+							  rs.getDouble("precio"), 
+							  rs.getInt("estado"));
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Error en buscar : " + e.getMessage());
+			
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+				
+		return p;
+
+	}
+	
+	@Override
+	public ArrayList<Producto> listarxCategoria(int categoria) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

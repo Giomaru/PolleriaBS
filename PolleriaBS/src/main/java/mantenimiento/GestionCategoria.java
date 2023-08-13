@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import interfaces.CategoriaInterface;
 import model.Categoria;
-import utils.ConexionBD;
+import utils.MySQLConexion8;
 
 public class GestionCategoria implements CategoriaInterface{
 	
@@ -20,7 +20,7 @@ public class GestionCategoria implements CategoriaInterface{
 		ResultSet rs = null;
 		
 		try {
-			con = ConexionBD.getConnection();
+			con = MySQLConexion8.getConexion();
 			String sql = "select * from tb_categorias";
 			pst = con.prepareStatement(sql);
 			
@@ -43,7 +43,7 @@ public class GestionCategoria implements CategoriaInterface{
 			System.out.println("Error en listar : " + e.getMessage());
 			
 		} finally {
-			ConexionBD.cerrarConexion();
+			MySQLConexion8.closeConexion(con);
 		}
 		
 		return lista;

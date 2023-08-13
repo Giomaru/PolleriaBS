@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import interfaces.UsuarioInterface;
 import model.Usuario;
-import utils.ConexionBD;
+import utils.MySQLConexion8;
 
 public class GestionUsuario implements UsuarioInterface{
 	
@@ -19,7 +19,7 @@ public class GestionUsuario implements UsuarioInterface{
 		ResultSet rs = null;
 		
 		try {
-			con = ConexionBD.getConnection();
+			con = MySQLConexion8.getConexion();
 			String sql = "{call usp_validaAcceso(?,?)}";
 			pst = con.prepareStatement(sql);
 			pst.setString(1, usuario);
@@ -44,7 +44,7 @@ public class GestionUsuario implements UsuarioInterface{
 			System.out.println("Error en validar : " + e.getMessage());
 			
 		} finally {
-			ConexionBD.cerrarConexion();
+			MySQLConexion8.closeConexion(con);
 		}
 		
 		return u;
@@ -59,7 +59,7 @@ public class GestionUsuario implements UsuarioInterface{
 		PreparedStatement pst = null;
 		
 		try {
-			con = ConexionBD.getConnection();
+			con = MySQLConexion8.getConexion();
 			String sql = "insert into tb_usuarios values (?,?,?,?,?,?,default,default)";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, u.getCodigo());
@@ -78,7 +78,7 @@ public class GestionUsuario implements UsuarioInterface{
 			System.out.println("Error al registrar : " + e.getMessage());
 			
 		} finally {
-			ConexionBD.cerrarConexion();
+			MySQLConexion8.closeConexion(con);
 		}
 		
 		return rs ;
