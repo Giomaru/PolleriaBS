@@ -11,34 +11,36 @@
 </head>
 <body>
 	<header class="header">
-        <div class="logo-container">
-        	<a href="Index.jsp">
-            <img  class="logo" src="imagenes/BRASA.jpeg"  alt=" ">
-            </a>
-        </div>
-        
-        <div class="search-container">
-            <input type="text" class="search" placeholder="Buscar Producto">
-        </div>
-        <div class="locations-container">
-            <a href="locales.jsp">
-            LOCALES  
-                <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
-            </a>
-        </div>
-        <div class="login-container">
-            <a href="login.jsp">
-            INGRESA O REGÍSTRATE  
-                <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
-            </a>
-            </div>
-        <div class="cart-container">
-            <a href="CanastaCompras.jsp">
-                <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
-            </a>
-        </div>
-    </header>
+		<div class="logo-container">
+			<a href="Index.jsp"> <img class="logo" src="imagenes/BRASA.jpeg"
+				alt=" ">
+			</a>
+		</div>
+
+		
+		<div class="locations-container">
+			<a href="locales.jsp"> LOCALES <img class="location-icon"
+				src="imagenes/ubica.png" alt="">
+
+			</a>
+		</div>
+		<div class="login-container">
+    	<% if (session.getAttribute("u") != null) { %>
+        	<div id="ingresado1">
+	            <p> <strong> ${u.getNombre() } ${u.apellidoPat } ${u.apellidoMat }</strong></p>
+	            <button class="nav-item active">
+	                <a class="nav-link" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
+	            </button>
+	            <span class="sr-only"></span>
+        	</div>
+    	<% } else { %>
+	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
+	            <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
+	        </a>
+    	<% } %>
+		</div>
+
+	</header>
 
 	<h1 class="usuarioh1">REGISTRAR USUARIO</h1>
 	<div id="login">

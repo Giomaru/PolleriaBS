@@ -18,9 +18,7 @@
 			</a>
 		</div>
 
-		<div class="search-container">
-			<input type="text" class="search" placeholder="Buscar Producto">
-		</div>
+		
 		<div class="locations-container">
 			<a href="locales.jsp"> LOCALES <img class="location-icon"
 				src="imagenes/ubica.png" alt="">
@@ -28,35 +26,27 @@
 			</a>
 		</div>
 		<div class="login-container">
-			<a href="login.jsp"> INGRESA O REGÍSTRATE <img class="login-icon"
-				src="imagenes/user.png" alt="Ingresar o Registrarse">
-				
-				<p>
-					Ud se ha identificado como : <strong> ${u.getNombre() }
-						${u.apellidoPat } ${u.apellidoMat } ${u.tipo }</strong>
-				</p>
+    	<% if (session.getAttribute("u") != null) { %>
+        	<div id="ingresado1">
+	            <p> <strong> ${u.getNombre() } ${u.apellidoPat } ${u.apellidoMat }</strong></p>
+	            <button class="nav-item active">
+	                <a class="nav-link" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
+	            </button>
+	            <span class="sr-only"></span>
+        	</div>
+    	<% } else { %>
+	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
+	            <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
+	        </a>
+    	<% } %>
+		</div>
 
-				<button class="nav-item active">
-					<a class="nav-link" href="crudUsu?btnAccion=logout">
-						<button class="btn btn-danger">Cerrar Sesión</button> <span
-						class="sr-only"></span>
-					</a>
-				</button>
-			</a>
-		</div>
-		<div class="cart-container">
-			<a href="CanastaCompras.jsp"> <img class="cart-icon" id="r5"
-				src="imagenes/CAR2.png" alt="Carrito de Compras">
-			</a>
-		</div>
 	</header>
 	<div>
 		<nav class="navbar">
 				
 					<ul>
-						<!-- <li><a href="Carta.jsp" onclick="mostrarSeccion('brasa')">CARTA</a></li> -->
 						<li><a href="carta?btnAccion=listado">CARTA</a></li>
-						<li><a href="#" onclick="mostrarPromociones()">PROMOCIONES</a></li>
 						<li><a href="nosotros.jsp">SOBRE NOSOTROS</a></li>
 					</ul>
 		
@@ -81,11 +71,7 @@
 					papas fritas y ensalada personal</p>
 				<br>
 				<h2 class="texto4">S/.24.90</h2>
-				<div class="buttons">
-					<a href="DetalleProducto.jsp">
-						<button class="buy-button">COMPRAR</button>
-					</a>
-				</div>
+				
 				<br>
 			</div>
 
@@ -98,11 +84,7 @@
 					+ abundantes papas fritas + ensalada de lechuga, tomate y pepino.</p>
 				<br>
 				<h2 class="texto4">S/.28.90</h2>
-				<div class="buttons">
-					<a href="DetalleProducto.jsp">
-						<button class="buy-buttons">COMPRAR</button>
-					</a>
-				</div>
+				
 				<br>
 			</div>
 
@@ -115,11 +97,7 @@
 					ensalada de lechuga, tomate y pepino.</p>
 				<br>
 				<h2 class="texto4">S/.30.90</h2>
-				<div class="buttons">
-					<a href="DetalleProducto.jsp">
-						<button class="buy-button">COMPRAR</button>
-					</a>
-				</div>
+				
 				<br>
 			</div>
 
@@ -127,9 +105,9 @@
 	</section>
 
 	<div class="buttons">
-		<a href="Carta.jsp">
-			<button class="view-more-button">VER MÁS</button>
-		</a>
+		<a href="carta?btnAccion=listado">
+		<button class="view-more-button">VER MÁS</button></a>
+		
 	</div>
 	<footer class="footer">
 		<div class="disclaimer-bar">
@@ -171,3 +149,20 @@
 </body>
 </html>
 <script src="js/carrusel.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var userLoggedIn = <%= session.getAttribute("u") != null %>;
+
+        var ingresoLink = document.getElementById("ingreso1");
+        var ingresadoDiv = document.getElementById("ingresado1");
+
+        if (userLoggedIn) {
+            ingresoLink.style.display = "none";
+            ingresadoDiv.style.display = "block";
+        } else {
+            ingresoLink.style.display = "block";
+            ingresadoDiv.style.display = "none";
+        }
+    });
+</script>
+
