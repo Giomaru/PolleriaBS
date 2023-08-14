@@ -37,41 +37,40 @@
     </header>
     <nav class="navbarra">
         <ul>
-            <li><a href="">
-            <img class="categoriacat" id="promociones" src="imagenes/VAR1.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('promociones')">
+            <img class="categoriacat" id="promociones1" src="imagenes/VAR1.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="brasa" src="imagenes/VAR2.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('brasa')">
+            <img class="categoriacat" id="brasa1" src="imagenes/VAR2.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="parrillas" src="imagenes/VAR3.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('parrillas')">
+            <img class="categoriacat" id="parrillas1" src="imagenes/VAR3.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="fcriolla" src="imagenes/VAR4.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('fcriolla')">
+            <img class="categoriacat" id="fcriolla1" src="imagenes/VAR4.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="broaster" src="imagenes/VAR5.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('broaster')">
+            <img class="categoriacat" id="broaster1" src="imagenes/VAR5.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="hamburguesas" src="imagenes/VAR6.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('hamburguesas')">
+            <img class="categoriacat" id="hamburguesas1" src="imagenes/VAR6.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="ensaladas" src="imagenes/VAR7.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('ensaladas')">
+            <img class="categoriacat" id="ensaladas1" src="imagenes/VAR7.png" alt="barra de categorias">
             </a></li>
-            <li><a href="">
-            <img class="categoriacat" id="desayunos" src="imagenes/VAR8.png" alt="barra de categorias">
+            <li><a href="#" onclick="mostrarSeccion('desayunos')">
+            <img class="categoriacat" id="desayunos1" src="imagenes/VAR8.png" alt="barra de categorias">
             </a></li>
         </ul>
     </nav>
     
-    
-    <section class="products-section">
+     <section class="section-promociones" id="promociones">
     <!-- Aquí irá la sección de productos -->
 	<div class="cuadros2carta">
 	<br>
     <!-- Ejemplo de un producto -->
     <div class="cuadrocarta">
-        <img class="imagenproducto" id="pollo15" src="imagenes/1-4 POLLO.jpg" alt="producto">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO9.jpg" alt="promociones">
         <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
         <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
         <br>
@@ -83,7 +82,152 @@
     	</div>
         <br>
     	</div>
-
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO10.jpg" alt="promociones">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO11.jpg" alt="promociones">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    <!-- Repite el bloque anterior para cada producto -->
+	</div>
+	
+	</section>
+    
+    <section class="section-brasa" id="brasa">
+    <!-- Aquí irá la sección de productos -->
+	<div class="cuadros2carta">
+	<br>
+    <!-- Ejemplo de un producto -->
+    <div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO1.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO2.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO3.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO4.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    <!-- Repite el bloque anterior para cada producto -->
+	</div>
+	
+	<div class="cuadros2carta">
+	<br>
+    <!-- Ejemplo de un producto -->
+    <div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO5.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO6.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO7.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	<div class="cuadrocarta">
+        <img class="imagenproducto" id="pollo15" src="productos/PRO8.jpg" alt="brasa">
+        <h2 class="nombre">1/4 De Pollo a la Brasa</h2>
+        <p class="descripcion">Nuestro tradicional 1/4 de pollo acompañado de abundantes papas fritas y ensalada personal</p>
+        <br>
+        <h3 class="precio">S/.24.90</h3>
+        <div class="buttons">
+        	<a href="DetalleProducto.jsp">
+        	<button class="buy-button">COMPRAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
     <!-- Repite el bloque anterior para cada producto -->
 	</div>
 	
