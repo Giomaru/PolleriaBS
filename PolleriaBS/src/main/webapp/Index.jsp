@@ -54,8 +54,8 @@
 		<nav class="navbar">
 				
 					<ul>
-						<li><a href="Carta.jsp">CARTA</a></li>
-						<li><a href="Carta.jsp">PROMOCIONES</a></li>
+						<li><a href="Carta.jsp" onclick="mostrarSeccion('brasa')">CARTA</a></li>
+						<li><a href="#" onclick="mostrarPromociones()">PROMOCIONES</a></li>
 						<li><a href="nosotros.jsp">SOBRE NOSOTROS</a></li>
 					</ul>
 		
