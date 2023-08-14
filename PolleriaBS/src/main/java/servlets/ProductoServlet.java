@@ -16,8 +16,6 @@ import java.util.ArrayList;
  */
 @WebServlet(name = "crudProductos", description = "Controlador para el mantenimiento de los Productos", urlPatterns = {
 "/crudProductos" })
-
-
 public class ProductoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -56,11 +54,32 @@ public class ProductoServlet extends HttpServlet {
 		case "q":
 			buscar(request, response);
 			break;
-
+		case "buscarPorId":
+			buscarPorId(request, response);
+			break;
 		default:
 			break;
 		}
 
+	}
+
+	private void buscarPorId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Ingreso al proceso buscar por id");
+		// leer el codigo del producto a buscar
+		int idprod = Integer.parseInt(request.getParameter("id"));
+
+		// obtener la informacion del producto, usando la clase gestion
+		Producto p = new GestionProducto().buscar(idprod);
+		
+		System.out.println("ID PRO: " + idprod);
+		System.out.println("PRODUCTO");
+		System.out.println(p);
+		
+		// enviar el obj de producto como atributo a la pagina
+		request.setAttribute("pro", p);
+
+		// reenvia a la pagina
+		request.getRequestDispatcher("DetalleProducto.jsp").forward(request, response);
 	}
 
 	private void buscar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

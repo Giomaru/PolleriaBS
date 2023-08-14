@@ -47,6 +47,14 @@
         <button class="view-more-button2">MANTENIMIENTO DE <br>CARTA</button>
     	</a>
 	</div>
+	
+	<h2 class="texto3">PEDIDOS</h2>
+    
+    <div class="botones3">
+   	 	<a href="pedido?accion=listado">
+        <button class="view-more-button2">GESTION DE<br>PEDIDOS</button>
+    	</a>
+	</div>
     
     <h2 class="texto3">REPORTES</h2>
     
@@ -55,6 +63,7 @@
         <button class="view-more-button2">REPORTE DE PEDIDOS</button>
     	</a>
     </div>
+    
     <br>
     <br>
    	 	<div class="botones3">

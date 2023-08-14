@@ -157,7 +157,7 @@ public class GestionProducto implements ProductoInterface {
 			String sql = "select * from tb_productos where idprod = ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, idprod);
-			pst.setInt(2, 1);
+			//pst.setInt(2, 1);
 			
 			rs = pst.executeQuery();
 			

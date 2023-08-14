@@ -29,4 +29,24 @@
     <servlet-name>ProductoServlet</servlet-name>
     <url-pattern>/ProductoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartaServlet</display-name>
+    <servlet-name>CartaServlet</servlet-name>
+    <servlet-class>servlets.CartaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartaServlet</servlet-name>
+    <url-pattern>/CartaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PedidoServlet</display-name>
+    <servlet-name>PedidoServlet</servlet-name>
+    <servlet-class>servlets.PedidoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PedidoServlet</servlet-name>
+    <url-pattern>/PedidoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

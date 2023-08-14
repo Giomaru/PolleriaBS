@@ -968,12 +968,9 @@ th, td {
     justify-content: center;
 }
 
-
 #mante>h1 {
 	text-align: center;
 }
-
-
 
 .partemante {
     background-color: white;
@@ -981,6 +978,40 @@ th, td {
     border: 1px solid #ccc;
     border-radius: 5px;
     justify-content: center;
+}
+
+.card-container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+	width: 22%;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin: 10px;
+}
+
+.card a {
+	color: white;
+	text-decoration: none;
+}
+
+.input-text {
+	margin: 5px 0;
+    font-size: 25px;
+    padding: 15px 10px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    width: 100%
 }
 
 

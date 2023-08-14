@@ -18,13 +18,13 @@
 <style type="text/css"></style>
 
 <style>
-	.center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: rigth;
-  	}
+.center-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	text-align: rigth;
+}
 </style>
 </head>
 
@@ -55,122 +55,122 @@
 			</a>
 		</div>
 	</header>
-	
-	
-<div class="center-container">
-	<div class="formulariologin">
-
-		<main class="container1">
-
-			<section class="container1" style="width: 65%; float: left;">
-
-				<h1>Mantenimiento de Carta</h1>
-				<br>
-
-				<!-- Formulario -->
-				<form action="crudProductos" method="post">
-					<div class="form-group">
-						<label for="inputCodigo">Código del Producto:</label> <input
-							name="txtCodigo" value="${p.idprod }" class="form-control"
-							id="inputCodigo" placeholder="Ingrese Código">
-					</div>
-
-					<div class="form-group">
-						<label for="inputNombreProd">Nombre del Producto:</label> <input
-							name="txtNombre" value="${p.nombreprod }" class="form-control"
-							id="inputNombreProd"
-							placeholder="Ingrese el nombre del producto">
-					</div>
-
-					<div class="form-group">
-						<label for="inputDescripcion">Descripción:</label> <input
-							name="txtDescripcion" value="${p.descripcion }"
-							class="form-control" id="inputDescripcion"
-							placeholder="Ingrese la descripción del producto">
-					</div>
-
-					<div class="form-group col-md-6">
-						<label for="inputEstado">Categoría:</label> <select
-							name="cboCategoria" class="form-control"
-							id="exampleFormControlSelect1">
-							<option value='-1'>Seleccione</option>
-							<option value='1'>Brasas</option>
-							<option value='2'>Parrillas</option>
-							<option value='3'>Fusión Criolla</option>
-							<option value='4'>Broaster</option>
-							<option value='5'>Hamburguesas</option>
-							<option value='6'>Ensaladas</option>
-							<option value='7'>Desayunos</option>
-						</select>
-					</div>
 
 
-					<div class="form-group col-md-6">
-						<label for="inputPrecio">Precio:</label> <input type="number"
-							name="txtPrecio" value="${p.precio }" class="form-control"
-							id="inputPrecio" placeholder="0.00" min="0" step="0.01">
-					</div>
+	<div class="center-container">
+		<div class="formulariologin">
 
-					<div class="form-group col-md-6">
-						<label for="inputEstado">Estado:</label> <select name="cboEstado"
-							class="form-control" id="exampleFormControlSelect1">
-							<option value='-1'>Seleccione</option>
-							<option value='1'>Activo</option>
-							<option value='2'>Eliminado</option>
-						</select>
-					</div>
+			<main class="container1">
 
+				<section class="container1" style="width: 65%; float: left;">
+
+					<h1>Mantenimiento de Carta</h1>
 					<br>
 
-					<button type="submit" name="btnAccion" value="registrar"
-						class="btn btn-primary">Registrar</button>
-					<button type="submit" name="btnAccion" value="actualizar"
-						class="btn btn-primary">Actualizar</button>
-					<button type="submit" name="btnAccion" value="eliminar"
-						class="btn btn-danger">Eliminar</button>
-					<button type="submit" name="btnAccion" value="listado"
-						class="btn btn-warning">Listado</button>
-					
-	
-		</form>
-		<br> ${mensaje }
-		</section>
+					<!-- Formulario -->
+					<form action="crudProductos" method="post">
+						<div class="form-group">
+							<label for="inputCodigo">Código del Producto:</label> <input
+								name="txtCodigo" value="${p.idprod }" class="form-control"
+								id="inputCodigo" placeholder="Ingrese Código">
+						</div>
 
-		<tr>
-			<table class="table">
+						<div class="form-group">
+							<label for="inputNombreProd">Nombre del Producto:</label> <input
+								name="txtNombre" value="${p.nombreprod }" class="form-control"
+								id="inputNombreProd"
+								placeholder="Ingrese el nombre del producto">
+						</div>
 
-			<tr>
-				<th>Código del Producto</th>
-				<th>Nombre del Producto</th>
-				<th>Descripción</th>
-				<th>Categoria</th>
-				<th>Precio</th>
-			</tr>
+						<div class="form-group">
+							<label for="inputDescripcion">Descripción:</label> <input
+								name="txtDescripcion" value="${p.descripcion }"
+								class="form-control" id="inputDescripcion"
+								placeholder="Ingrese la descripción del producto">
+						</div>
 
-			<%
-			GestionProducto gp = new GestionProducto();
-			ArrayList<Producto> listado = gp.listado();
+						<div class="form-group col-md-6">
+							<label for="inputEstado">Categoría:</label> <select
+								name="cboCategoria" class="form-control"
+								id="exampleFormControlSelect1">
+								<option value='-1'>Seleccione</option>
+								<option value='1'>Brasas</option>
+								<option value='2'>Parrillas</option>
+								<option value='3'>Fusión Criolla</option>
+								<option value='4'>Broaster</option>
+								<option value='5'>Hamburguesas</option>
+								<option value='6'>Ensaladas</option>
+								<option value='7'>Desayunos</option>
+							</select>
+						</div>
 
-			if (listado != null) {
-				for (Producto p : listado) {
-			%>
-			<tr>
-				<td><%=p.getIdprod()%></td>
-				<td><%=p.getNombreprod()%></td>
-				<td><%=p.getDescripcion()%></td>
-				<td><%=p.getCategoriaid()%></td>
-				<td><%=p.getPrecio()%></td>
-			</tr>
-			<%
-			}
-			}
-			%>
 
-		</table>
-	</main>
+						<div class="form-group col-md-6">
+							<label for="inputPrecio">Precio:</label> <input type="number"
+								name="txtPrecio" value="${p.precio }" class="form-control"
+								id="inputPrecio" placeholder="0.00" min="0" step="0.01">
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="inputEstado">Estado:</label> <select name="cboEstado"
+								class="form-control" id="exampleFormControlSelect1">
+								<option value='-1'>Seleccione</option>
+								<option value='1'>Activo</option>
+								<option value='2'>Eliminado</option>
+							</select>
+						</div>
+
+						<br>
+
+						<button type="submit" name="btnAccion" value="registrar"
+							class="btn btn-primary">Registrar</button>
+						<button type="submit" name="btnAccion" value="actualizar"
+							class="btn btn-primary">Actualizar</button>
+						<button type="submit" name="btnAccion" value="eliminar"
+							class="btn btn-danger">Eliminar</button>
+						<button type="submit" name="btnAccion" value="listado"
+							class="btn btn-warning">Listado</button>
+
+
+					</form>
+					<br> ${mensaje }
+				</section>
+
+				<tr>
+					<table class="table">
+
+						<tr>
+							<th>Código del Producto</th>
+							<th>Nombre del Producto</th>
+							<th>Descripción</th>
+							<th>Categoria</th>
+							<th>Precio</th>
+						</tr>
+
+						<%
+						GestionProducto gp = new GestionProducto();
+						ArrayList<Producto> listado = gp.listado();
+
+						if (listado != null) {
+							for (Producto p : listado) {
+						%>
+						<tr>
+							<td><%=p.getIdprod()%></td>
+							<td><%=p.getNombreprod()%></td>
+							<td><%=p.getDescripcion()%></td>
+							<td><%=p.getCategoriaid()%></td>
+							<td><%=p.getPrecio()%></td>
+						</tr>
+						<%
+						}
+						}
+						%>
+
+					</table>
+			</main>
+		</div>
+
 	</div>
-
-</div>
 
 	<div class="regreso3">
 		<a href="Menuadministrador.jsp">

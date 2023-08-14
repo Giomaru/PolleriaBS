@@ -1,13 +1,13 @@
-<%@page import="model.Producto"%>
+<%@page import="model.Pedido"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Carta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido</title>
 <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
@@ -36,78 +36,61 @@
 			</a>
 		</div>
 	</header>
-	<nav class="navbarra">
-		<ul>
-			<li><a href="#" onclick="mostrarSeccion('promociones')"> <img
-					class="categoriacat" id="promociones1" src="imagenes/VAR1.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('brasa')"> <img
-					class="categoriacat" id="brasa1" src="imagenes/VAR2.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('parrillas')"> <img
-					class="categoriacat" id="parrillas1" src="imagenes/VAR3.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('fcriolla')"> <img
-					class="categoriacat" id="fcriolla1" src="imagenes/VAR4.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('broaster')"> <img
-					class="categoriacat" id="broaster1" src="imagenes/VAR5.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('hamburguesas')"> <img
-					class="categoriacat" id="hamburguesas1" src="imagenes/VAR6.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('ensaladas')"> <img
-					class="categoriacat" id="ensaladas1" src="imagenes/VAR7.png"
-					alt="barra de categorias">
-			</a></li>
-			<li><a href="#" onclick="mostrarSeccion('desayunos')"> <img
-					class="categoriacat" id="desayunos1" src="imagenes/VAR8.png"
-					alt="barra de categorias">
-			</a></li>
-		</ul>
-	</nav>
 
-	<section class="section-promociones" id="promociones">
-		<!-- Aquí irá la sección de productos -->
-		<div class="card-container">
-			<br>
-			<%
-			
-			ArrayList<Producto> listado = (ArrayList<Producto>) request.getAttribute("listado");
-
-			if (listado != null) {
-				for (Producto p : listado) {
-			%>
-			<div class="card">
-				<img class="imagenproducto" id="pollo15" src="productos/PRO9.jpg"
-					alt="promociones">
-				<h2 class="nombre"><%=p.getNombreprod()%></h2>
-				<p class="descripcion"><%=p.getDescripcion()%></p>
-				<br>
-				<h3 class="precio">S/ <%=p.getPrecio()%></h3>
-				<div class="buttons">
-					<a href="crudProductos?btnAccion=buscarPorId&id=<%=p.getIdprod()%>">
-						<button class="buy-button">COMPRAR</button>
-					</a>
-				</div>
-				<br>
-			</div>
-
-			<%
-			}
-			}
-			%>
-
+	<div class="pedido-container">
+		<div class="pedido-header">
+			<h1 class="pedido-title">LISTA DE PEDIDOS</h1>
 		</div>
 
-	</section>
-	
+		<table class="table">
+
+			<tr>
+				<th style="width: 5%; text-align: center;">Código</th>
+				<th style="width: 15%; text-align: left;">Cliente</th>
+				<th style="width: 15%; text-align: left;">Direccion Cliente</th>
+				<th style="width: 15%; text-align: left;">Nombre Producto</th>
+				<th style="width: 5%; text-align: center;">Cantidad</th>
+				<th style="width: 5%; text-align: right;">Precio</th>
+				<th style="width: 10%; text-align: right;">Subtotal</th>
+				<th style="width: 10%; text-align: center;">Estado</th>
+				<th style="width: 5%; text-align: center;">Accion</th>
+			</tr>
+
+			<%
+			ArrayList<Pedido> listado = (ArrayList<Pedido>) request.getAttribute("listado");
+
+			if (listado != null) {
+				for (Pedido p : listado) {
+			%>
+			<tr>
+				<td style="text-align: center;"><%=p.getIdPed()%></td>
+				<td><%=p.getNombreCliente()%></td>
+				<td><%=p.getDireccionCliente()%></td>
+				<td><%=p.getNombreProducto()%></td>
+				<td style="text-align: center;"><%=p.getCantidad()%></td>
+				<td style="text-align: right;"><%=p.getPrecio()%></td>
+				<td style="text-align: right;"><%=p.getSubtotal()%></td>
+				<td style="text-align: center;"><%=p.getEstadoPedido()%></td>
+				<td>
+				<% if(!(p.getEstadoPedido().equals("ENTREGADO"))){ %>
+					<div class="buttons">
+						<a href="pedido?accion=cambiar&id=<%=p.getIdPed()%>">
+							<button class="buy-button">CAMBIAR A ENTREGADO</button>
+						</a>
+					</div>
+					<%} %>
+				</td>
+			</tr>
+			<%
+			}
+			}
+			%>
+
+		</table>
+
+	</div>
+
+
 	<footer class="footer">
 		<div class="disclaimer-bar">
 			<p class="disclaimer-text">DISFRUTA DEL MEJOR POLLO A LA BRASA
