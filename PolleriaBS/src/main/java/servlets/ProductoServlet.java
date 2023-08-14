@@ -77,6 +77,7 @@ public class ProductoServlet extends HttpServlet {
 		
 		// enviar el obj de producto como atributo a la pagina
 		request.setAttribute("pro", p);
+		request.setAttribute("estadoReg", false); // Validacion de registro
 
 		// reenvia a la pagina
 		request.getRequestDispatcher("DetalleProducto.jsp").forward(request, response);

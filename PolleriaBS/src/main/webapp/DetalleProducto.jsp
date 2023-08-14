@@ -40,6 +40,7 @@
 
 		<%
 		Producto prod = (Producto) request.getAttribute("pro");
+		boolean seRegistro = (boolean) request.getAttribute("estadoReg");
 		%>
 
 		<!-- Aquí irá la sección de productos -->
@@ -63,7 +64,8 @@
 						<div>
 							<p>Cantidad:</p>
 							<button class="buttons3" id="decrement" type="button">-</button>
-							<input class="cant3" type="text" id="quantity" value="1" name="cantidad">
+							<input class="cant3" type="text" id="quantity" value="1"
+								name="cantidad">
 							<button class="buttons3" id="increment" type="button">+</button>
 						</div>
 						<p>
@@ -72,20 +74,33 @@
 						<br>
 						<div>
 							<label>Nombre completo de la persona que recibe el pedido</label>
-							<input class="input-text" type="text" id="cliente" name="nombreCliente">
+							<input class="input-text" type="text" id="cliente"
+								name="nombreCliente">
 						</div>
 						<br>
 						<div>
 							<label>Dirección de la persona que recibe el pedido</label> <input
-								class="input-text" type="text" id="direccionCliente" name="direccionCliente">
+								class="input-text" type="text" id="direccionCliente"
+								name="direccionCliente">
 						</div>
-						
-						<input type="hidden" name="idProducto" value="<%=prod.getIdprod()%>">
-						<input type="hidden" name="precioProducto" value="<%=prod.getPrecio()%>">
-						
+
+						<input type="hidden" name="idProducto"
+							value="<%=prod.getIdprod()%>"> <input type="hidden"
+							name="precioProducto" value="<%=prod.getPrecio()%>">
+						<%
+						if (seRegistro) {
+						%>
+						<div>
+							<h3 style="background-color: green; padding: 10px;">Pedido
+								registrado con éxito</h3>
+						</div>
+						<%
+						}
+						%>
+
 						<div class="buttons3">
-							<button class="buy-button" type="submit" name="accion" value="regPedido">SOLICITAR
-								PEDIDO</button>
+							<button class="buy-button" type="submit" name="accion"
+								value="regPedido">SOLICITAR PEDIDO</button>
 						</div>
 						<br>
 					</form>
@@ -97,7 +112,7 @@
 
 	</section>
 
-	<div class="regreso2" style="margin-top: 6rem;">
+	<div class="regreso2" style="margin-top: 8rem;">
 		<a href="Index.jsp">
 			<button class="view-more-button">REGRESAR</button>
 		</a>
