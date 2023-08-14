@@ -101,14 +101,6 @@ function updateQuantityAndTotal() {
 
 
 
-
-
-
-
-
-
-
-
 //mostrando seccion
 function mostrarSeccion(id) {
     // Ocultar todas las secciones
@@ -124,20 +116,20 @@ function mostrarSeccion(id) {
     }
 }
 
-
-//navbar
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var showPromotions = window.location.href.includes("showPromotions=true");
-        if (showPromotions) {
-            mostrarSeccion('promociones');
-        }
-    });
-
+function mostrarBrasa() {
+    window.location.href = "Carta.jsp?showBrasa=true";
+}
 
 function mostrarPromociones() {
     window.location.href = "Carta.jsp?showPromotions=true";
 }
+
+
+
+
+
+
+
 
 
 
